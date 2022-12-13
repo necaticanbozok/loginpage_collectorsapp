@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/enterencePage"
-        android:name="com.necatican.loginpage.EnterencePage"
+        android:name="com.necatican.loginpage.EnteranceFragment"
         android:label="fragment_enterence_page"
-        tools:layout="@layout/fragment_enterence_page" >
+        tools:layout="@layout/fragment_enterance" >
         <action
             android:id="@+id/action_enterencePage_to_loginPage"
             app:destination="@id/loginPage" />
@@ -19,9 +19,9 @@
     </fragment>
     <fragment
         android:id="@+id/loginPage"
-        android:name="com.necatican.loginpage.loginPage"
+        android:name="com.necatican.loginpage.ui.login.LoginFragment"
         android:label="fragment_login_page"
-        tools:layout="@layout/fragment_login_page" >
+        tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginPage_to_signUpPage"
             app:destination="@id/signUpPage" />
@@ -31,12 +31,15 @@
     </fragment>
     <fragment
         android:id="@+id/signUpPage"
-        android:name="com.necatican.loginpage.signUpPage"
+        android:name="com.necatican.loginpage.ui.login.SignUpFragment"
         android:label="fragment_sign_up_page"
-        tools:layout="@layout/fragment_sign_up_page" >
+        tools:layout="@layout/fragment_sign_up" >
         <action
             android:id="@+id/action_signUpPage_to_loginPage"
             app:destination="@id/loginPage" />
+        <action
+            android:id="@+id/action_signUpPage_to_deneme"
+            app:destination="@id/deneme" />
     </fragment>
     <fragment
         android:id="@+id/deneme"
