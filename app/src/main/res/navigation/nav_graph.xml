@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/enterencePage">
+
+    <fragment
+        android:id="@+id/enterencePage"
+        android:name="com.necatican.loginpage.EnterencePage"
+        android:label="fragment_enterence_page"
+        tools:layout="@layout/fragment_enterence_page" >
+        <action
+            android:id="@+id/action_enterencePage_to_loginPage"
+            app:destination="@id/loginPage" />
+        <action
+            android:id="@+id/action_enterencePage_to_signUpPage"
+            app:destination="@id/signUpPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginPage"
+        android:name="com.necatican.loginpage.loginPage"
+        android:label="fragment_login_page"
+        tools:layout="@layout/fragment_login_page" >
+        <action
+            android:id="@+id/action_loginPage_to_signUpPage"
+            app:destination="@id/signUpPage" />
+        <action
+            android:id="@+id/action_loginPage_to_deneme"
+            app:destination="@id/deneme" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpPage"
+        android:name="com.necatican.loginpage.signUpPage"
+        android:label="fragment_sign_up_page"
+        tools:layout="@layout/fragment_sign_up_page" >
+        <action
+            android:id="@+id/action_signUpPage_to_loginPage"
+            app:destination="@id/loginPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/deneme"
+        android:name="com.necatican.loginpage.deneme"
+        android:label="fragment_deneme"
+        tools:layout="@layout/fragment_deneme" />
+</navigation>

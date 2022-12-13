@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "762135723866",
+    "project_id": "collectorsapp-a73c3",
+    "storage_bucket": "collectorsapp-a73c3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762135723866:android:fef2a2fea025c3a931bd63",
+        "android_client_info": {
+          "package_name": "com.necatican.loginpage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "762135723866-1ckd4rs11ksp01br4imooadu8buf3eee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKedu0SpoEhHqo0Ee6Cp2Sy5C-JCup2lU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "762135723866-1ckd4rs11ksp01br4imooadu8buf3eee.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

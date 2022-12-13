@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="0dp"
+    android:paddingStart="0dp"
+    android:paddingLeft="0dp"
+    android:paddingTop="0dp"
+    android:paddingEnd="0dp"
+    android:paddingRight="0dp"
+    android:paddingBottom="0dp"
+    tools:context=".loginPage"
+    android:background="@drawable/loginpage">
+
+
+    <EditText
+        android:id="@+id/login_mail_editText"
+        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
+        android:layout_width="264dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="454dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="10dp"
+        android:background="#DBF7E9CB"
+        android:hint="Mail"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/login_password_editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/login_password_editText"
+        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
+        android:layout_width="264dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+
+
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="72dp"
+        android:background="#DBF7E9CB"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_mail_editText"
+        app:passwordToggleEnabled="true" />
+
+    <Button
+        android:id="@+id/loginbutton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="185dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="185dp"
+        android:text="log ın"
+        android:textColor="#F8E9CC"
+        app:backgroundTint="#72BBB2"
+        app:cornerRadius="26dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_password_editText" />
+
+    <Button
+        android:id="@+id/login_signup_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="54dp"
+        android:background="#00FFFDFD"
+        android:text="Don't have an account? Sıgn up"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginbutton2"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
