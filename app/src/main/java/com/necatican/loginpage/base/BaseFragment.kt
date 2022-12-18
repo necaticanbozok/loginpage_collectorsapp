@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.necatican.loginpage.MainActivity
+import com.necatican.loginpage.databinding.ActivityMainBinding
 
 typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
 
@@ -14,7 +15,7 @@ abstract class BaseFragment<VB : ViewBinding>(
     private val inflate: Inflate<VB>
 ) : Fragment(), IBottomBarInterface {
 
-    private var _binding: VB? = null
+    var _binding: VB? = null
     val binding get() = _binding!!
 
 
@@ -38,6 +39,8 @@ abstract class BaseFragment<VB : ViewBinding>(
         else
             (activity as MainActivity).hideNavigationBar()
     }
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()
