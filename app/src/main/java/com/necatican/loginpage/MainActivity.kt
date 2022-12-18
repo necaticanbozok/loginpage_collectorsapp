@@ -1,43 +1,54 @@
 package com.necatican.loginpage
 
 
-import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
-import com.google.android.material.bottomnavigation.BottomNavigationView
-
+import androidx.navigation.ui.setupWithNavController
+import com.necatican.loginpage.databinding.ActivityMainBinding
+import com.necatican.loginpage.ui.main.MainPageFragment
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_enterance.*
 
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var navController: NavController
-    private lateinit var bottomNavigationView: BottomNavigationView
-
-    @SuppressLint("MissingInflatedId")
+    private var _binding: ActivityMainBinding? = null
+    private val binding get() = _binding!!
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        _binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        bottomNavigationView = findViewById(R.id.bottom_navigation)
-        navController = Navigation.findNavController(this, R.id.nav_host)
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        val navController = navHostFragment.navController
 
-        NavigationUI.setupWithNavController(bottomNavigationView, navController)
+        binding.bottomNavigation.setupWithNavController(
+            navController
+        )
+
+
+        //val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+       // NavigationUI.setupWithNavController(bottom_navigation,navHostFragment.navController)
+
+
     }
 
     fun hideNavigationBar() {
-        bottomNavigationView.visibility = View.GONE
+        bottom_navigation.visibility=View.GONE
+    //bottomNavigation.visibility = View.GONE
     }
 
     fun showNavigationBar() {
-        bottomNavigationView.visibility=View.VISIBLE
+
+        bottom_navigation.visibility=View.VISIBLE
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        return NavigationUI.navigateUp(navController, null)
-    }
+
 }
 

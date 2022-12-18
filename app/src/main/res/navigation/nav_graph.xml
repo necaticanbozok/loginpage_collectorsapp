@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/enterencePage">
+    app:startDestination="@id/mainPageFragment">
 
     <fragment
         android:id="@+id/enterencePage"
@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_enterencePage_to_signUpPage"
             app:destination="@id/signUpPage" />
+        <action
+            android:id="@+id/action_enterencePage_to_mainPageFragment"
+            app:destination="@id/mainPageFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginPage"
@@ -26,8 +29,8 @@
             android:id="@+id/action_loginPage_to_signUpPage"
             app:destination="@id/signUpPage" />
         <action
-            android:id="@+id/action_loginPage_to_deneme"
-            app:destination="@id/deneme" />
+            android:id="@+id/action_loginPage_to_mainPageFragment"
+            app:destination="@id/mainPageFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpPage"
@@ -38,12 +41,40 @@
             android:id="@+id/action_signUpPage_to_loginPage"
             app:destination="@id/loginPage" />
         <action
-            android:id="@+id/action_signUpPage_to_deneme"
-            app:destination="@id/deneme" />
+            android:id="@+id/action_signUpPage_to_mainPageFragment"
+            app:destination="@id/mainPageFragment" />
     </fragment>
     <fragment
-        android:id="@+id/deneme"
-        android:name="com.necatican.loginpage.deneme"
-        android:label="fragment_deneme"
-        tools:layout="@layout/fragment_deneme" />
+        android:id="@+id/profileFragment"
+        android:name="com.necatican.loginpage.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileButtonFragment"
+            app:destination="@id/editProfileButtonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chattingFragment"
+        android:name="com.necatican.loginpage.ui.chat.ChattingFragment"
+        android:label="fragment_chatting"
+        tools:layout="@layout/fragment_chatting" />
+    <fragment
+        android:id="@+id/editProfileButtonFragment"
+        android:name="com.necatican.loginpage.ui.profile.EditProfileButtonFragment"
+        android:label="fragment_edit_profile_button"
+        tools:layout="@layout/fragment_edit_profile_button" >
+        <action
+            android:id="@+id/action_editProfileButtonFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainPageFragment"
+        android:name="com.necatican.loginpage.ui.main.MainPageFragment"
+        android:label="fragment_main_page"
+        tools:layout="@layout/fragment_main_page" />
+    <fragment
+        android:id="@+id/postAdFragment"
+        android:name="com.necatican.loginpage.ui.post_ad.PostAdFragment"
+        android:label="fragment_post_ad"
+        tools:layout="@layout/fragment_post_ad" />
 </navigation>

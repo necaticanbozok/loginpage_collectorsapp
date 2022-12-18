@@ -15,7 +15,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
             findNavController().navigate(R.id.action_signUpPage_to_loginPage)
         }
         binding.signupbutton2.setOnClickListener {
-            findNavController().navigate(R.id.action_signUpPage_to_deneme)
+            findNavController().navigate(R.id.action_signUpPage_to_mainPageFragment)
         }
     }
 

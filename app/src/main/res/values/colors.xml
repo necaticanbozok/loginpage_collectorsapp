@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="color_cyan">#72BBB2</color>
     <color name="color_top">#D97040</color>
+    <color name="color_background">#F0E0C1</color>
+    <color name="color_profile_name">#4E4138</color>
 </resources>
