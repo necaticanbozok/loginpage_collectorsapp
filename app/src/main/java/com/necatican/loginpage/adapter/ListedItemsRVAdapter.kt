@@ -1,47 +1,37 @@
 package com.necatican.loginpage.adapter
 
 import android.view.LayoutInflater
-import android.view.View
-import android.view.View.inflate
 import android.view.ViewGroup
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.necatican.loginpage.R
 import com.necatican.loginpage.data.model.Items
-import kotlinx.android.synthetic.main.card_view_profile.view.*
+import com.necatican.loginpage.databinding.ItemListedRecyclerViewBinding
 
-class ListedItemsRVAdapter( itemList: ArrayList<Items>):RecyclerView.Adapter<ListedItemsRVAdapter.ItemViewHolder>(){
-
-    var items=itemList
+class ListedItemsRVAdapter():RecyclerView.Adapter<ListedItemsRVAdapter.ItemViewHolder>(){
+    private var list = emptyList<Items>()
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        var createdItem=items.get(position)
-        holder?.setData(createdItem,position)
-
+        holder.bind(list[position])
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        var inflater = LayoutInflater.from(parent?.context)
-        var card_view_profile = inflater.inflate(R.layout.card_view_profile,parent,false)
-
-        return ItemViewHolder(card_view_profile)
+        val inflater = LayoutInflater.from(parent.context)
+        return ItemViewHolder(ItemListedRecyclerViewBinding.inflate(inflater,parent,false))
     }
 
-    override fun getItemCount(): Int {
-        return items.size
-    }
-    class ItemViewHolder(card_view_profile:View):RecyclerView.ViewHolder(card_view_profile) {
-         var single_item=card_view_profile as CardView
+    override fun getItemCount() = list.size
 
-        var itemName= single_item.AdNameText
-        var itemImage= single_item.AdImage
-        var itemPrice=single_item.AdPrice
+    class ItemViewHolder(val binding: ItemListedRecyclerViewBinding):RecyclerView.ViewHolder(binding.root) {
 
-        fun setData(createdItem:Items,position: Int){
-            itemName.text=createdItem.adName
-            itemImage.setImageResource(createdItem.adImage)
+        fun bind(item: Items) {
+            binding.AdImage.setImageResource(R.drawable.listed_item1)
+            binding.AdNameText.text = item.adName
+            binding.AdPrice.text = item.adPrice
         }
+
     }
 
-
-
+    fun setData(newList: List<Items>){
+        list = newList
+        notifyDataSetChanged()
+    }
 }
