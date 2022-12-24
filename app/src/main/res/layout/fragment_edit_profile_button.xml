@@ -36,7 +36,7 @@
         android:layout_width="347dp"
         android:layout_height="3dp"
         android:src="@drawable/line"
-        app:layout_constraintBottom_toTopOf="@+id/CloseTabBtn"
+        app:layout_constraintBottom_toTopOf="@+id/Close_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -162,18 +162,21 @@
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
-        android:id="@+id/CloseTabBtn"
+        android:id="@+id/Close_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="257dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="39dp"
         android:layout_marginBottom="16dp"
         android:text="Close Tab"
+        android:textColor="#212121"
         app:backgroundTint="@color/color_top"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView15" />
 
     <Button
         android:id="@+id/ChangePhotoBtn"
