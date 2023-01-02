@@ -55,6 +55,17 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:31.1.1')
     implementation("com.google.android.material:material:1.1.0-beta01")
 
+    /*ViewModel :
+    implementation("androidx.lifecycle:lifecycle-viewmodel:2.5.1")
+    implementation("androidx.activity:activity-ktx:1.6.1")
+    */
+
+    /*LiveData:
+    implementation("androidx.lifecycle:lifecycle-livedata:2.5.1")
+    kapt "androidx.lifecycle:lifecycle-compiler:2.5.1"
+    apply plugin:'kotlin-kapt'
+    */
+
 
 
     

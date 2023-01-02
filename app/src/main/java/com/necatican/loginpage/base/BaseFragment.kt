@@ -15,7 +15,7 @@ abstract class BaseFragment<VB : ViewBinding>(
     private val inflate: Inflate<VB>
 ) : Fragment(), IBottomBarInterface {
 
-    var _binding: VB? = null
+    private var _binding: VB? = null
     val binding get() = _binding!!
 
 

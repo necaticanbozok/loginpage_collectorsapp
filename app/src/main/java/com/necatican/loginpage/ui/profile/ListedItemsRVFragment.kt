@@ -11,40 +11,24 @@ import com.necatican.loginpage.R
 import com.necatican.loginpage.adapter.ListedItemsRVAdapter
 import com.necatican.loginpage.base.BaseFragment
 import com.necatican.loginpage.data.model.Items
-import com.necatican.loginpage.databinding.FragmentProfileBinding
+import com.necatican.loginpage.databinding.FragmentListedItemsRvBinding
 
 
-class ListedItemsRVFragment(currentArgId: Int) : BaseFragment<FragmentProfileBinding>(FragmentProfileBinding::inflate){
-    var listingItems = ArrayList<Items>()
-    private lateinit var listItemRecyclerView:RecyclerView
-    private lateinit var adapter:ListedItemsRVAdapter
+class ListedItemsRVFragment : BaseFragment<FragmentListedItemsRvBinding>(FragmentListedItemsRvBinding::inflate){
+    private val adapter by lazy { ListedItemsRVAdapter() }
 
-    @SuppressLint("MissingInflatedId")
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view: View = inflater.inflate(R.layout.fragment_listed_items_rv,container,false)
-
-        listItemRecyclerView = view.findViewById(R.id.listItemRecyclerView)
-        adapter= ListedItemsRVAdapter(listingItems)
-        listItemRecyclerView.adapter=adapter
-        var MylayoutManager = StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
-        listItemRecyclerView.layoutManager=MylayoutManager
-        return view
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        adapter.setData(loadData())
+        binding.listItemRecyclerView.adapter = adapter
     }
 
     //loading data
-    private fun loadData(){
-        var adImagesDenemesi = arrayOf(
-            R.drawable.listed_item1,
-            R.drawable.img)
-
-        var adNameDenemesi = arrayOf("Erkin koray tutkusu",
-            "Times Ataturk")
-
-        var adPricesDenemesi = arrayOf(1000,2000)
-
-        for(i in 0.. adImagesDenemesi.size-1){
-            var addingItem=Items(adImagesDenemesi[i].toString(),adNameDenemesi[i],adPricesDenemesi[i])
-            listingItems.add(addingItem)
+    private fun loadData() : List<Items>{
+       val myList = mutableListOf<Items>()
+        for (i in 1..10) {
+            myList.add(Items(adImage = R.drawable.listed_item1, adName = "$i.Emre", adPrice = "$i"))
         }
+        return  myList
     }
 }
