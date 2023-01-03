@@ -4,18 +4,301 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_background"
     tools:context=".ui.post_ad.PostAdFragment">
+
+
+    <TextView
+        android:id="@+id/product_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Category"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.28" />
+
+    <TextView
+        android:id="@+id/product_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginBottom="121dp"
+        android:text="Product Description"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/product_category"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/music_box"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="365dp"
+        android:src="@drawable/music_box"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_category" />
+
+    <ImageView
+        android:id="@+id/publishing_box"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="365dp"
+        android:src="@drawable/publishing_box"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/music_box"
+        app:layout_constraintTop_toBottomOf="@+id/product_category" />
+
+    <ImageView
+        android:id="@+id/movies_box"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="365dp"
+        android:src="@drawable/movies_box"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/publishing_box"
+        app:layout_constraintTop_toBottomOf="@+id/product_category" />
+
+    <ImageView
+        android:id="@+id/collectibles_box"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="365dp"
+        android:src="@drawable/collectibles_box"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/movies_box"
+        app:layout_constraintTop_toBottomOf="@+id/product_category" />
 
     <TextView
         android:id="@+id/textView3"
+        android:layout_width="51dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="339dp"
+        android:layout_marginBottom="90dp"
+        android:text="Photos"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/product_category"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/blue_rectangle_1"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="28dp"
+        android:src="@drawable/blue_rectangle"
+        app:layout_constraintBottom_toTopOf="@+id/product_category"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/blue_rectangle_2"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/blue_rectangle"
+        app:layout_constraintStart_toEndOf="@+id/blue_rectangle_1"
+        app:layout_constraintTop_toTopOf="@+id/blue_rectangle_1" />
+
+    <ImageView
+        android:id="@+id/blue_rectangle_3"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/blue_rectangle"
+        app:layout_constraintStart_toEndOf="@+id/blue_rectangle_5"
+        app:layout_constraintTop_toTopOf="@+id/blue_rectangle_1" />
+
+    <ImageView
+        android:id="@+id/blue_rectangle_4"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/blue_rectangle"
+        app:layout_constraintStart_toEndOf="@+id/blue_rectangle_2"
+        app:layout_constraintTop_toTopOf="@+id/blue_rectangle_1" />
+
+    <ImageView
+        android:id="@+id/blue_rectangle_5"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/blue_rectangle"
+        app:layout_constraintStart_toEndOf="@+id/blue_rectangle_4"
+        app:layout_constraintTop_toTopOf="@+id/blue_rectangle_1" />
+
+    <TextView
+        android:id="@+id/photo_req"
+        android:layout_width="150dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="237dp"
+        android:layout_marginBottom="10dp"
+        android:text="Add at least one photo"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/product_category"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blue_rectangle_1" />
+
+    <TextView
+        android:id="@+id/music_string"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="POST AD"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="10dp"
+        android:text="Music"
+        android:textColor="#000000"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toBottomOf="@+id/music_box" />
+
+    <TextView
+        android:id="@+id/publishing_string"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="10dp"
+        android:text="Publishing"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/music_string"
+        app:layout_constraintTop_toBottomOf="@+id/publishing_box" />
+
+    <TextView
+        android:id="@+id/movies_string"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="10dp"
+        android:text="Movies"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/publishing_string"
+        app:layout_constraintTop_toBottomOf="@+id/movies_box" />
+
+    <TextView
+        android:id="@+id/collectibles_string"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="10dp"
+        android:text="Collectibles"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/movies_string"
+        app:layout_constraintTop_toBottomOf="@+id/collectibles_box" />
+
+    <EditText
+        android:id="@+id/product_title_string"
+        android:layout_width="331dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/product_title_background"
+        android:hint="Type the product title here."
+        android:inputType="text"
+        android:padding="10dp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_title" />
+
+    <TextView
+        android:id="@+id/product_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginBottom="9dp"
+        android:text="Product Title"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/product_title_string"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/music_string" />
+
+    <EditText
+        android:id="@+id/product_description_string"
+        android:layout_width="289dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/product_title_background"
+        android:hint="Type the product description here."
+        android:inputType="text"
+        android:padding="10dp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_title_string" />
+
+    <TextView
+        android:id="@+id/product_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:text="Price"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_description_string" />
+
+    <EditText
+        android:id="@+id/price_box"
+        android:layout_width="165dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/product_title_background"
+        android:hint="0$."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_price" />
+
+    <Button
+        android:id="@+id/sell_button"
+        android:layout_width="78dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="47dp"
+        android:background="@drawable/blue_rectangle"
+        android:text="Sell"
+        android:textSize="10sp"
+        app:backgroundTint="@color/color_cyan"
+        app:layout_constraintStart_toEndOf="@+id/price_box"
+        app:layout_constraintTop_toBottomOf="@+id/product_description_string" />
+
+    <Button
+        android:id="@+id/sell_auction_button"
+        android:layout_width="127dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="47dp"
+        android:background="@drawable/blue_rectangle"
+        android:text="Sell by Auction"
+        android:textSize="10sp"
+        app:backgroundTint="@color/color_cyan"
+        app:layout_constraintStart_toEndOf="@+id/sell_button"
+        app:layout_constraintTop_toBottomOf="@+id/product_description_string" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
