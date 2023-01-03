@@ -8,7 +8,7 @@ import com.necatican.loginpage.data.model.User
 
 
 class LoginViewModel:ViewModel() {
-/*
+
     private val currentUser by lazy { FirebaseAuth.getInstance().currentUser!!.uid }
     private val db by lazy { FirebaseFirestore.getInstance() }
     val isSeen: MutableLiveData<Boolean> by lazy { MutableLiveData<Boolean>() }
@@ -18,6 +18,6 @@ class LoginViewModel:ViewModel() {
             isSeen.value = (it.toObject(User::class.java) as User).userName!=""
         }
     }
-    */
+
 
 }

@@ -5,74 +5,62 @@ import android.view.View
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.FirebaseFirestore
 import com.necatican.loginpage.R
 import com.necatican.loginpage.base.BaseFragment
+import com.necatican.loginpage.data.model.SellersList
 import com.necatican.loginpage.data.model.User
+import com.necatican.loginpage.data.model.UserList
 import com.necatican.loginpage.databinding.FragmentSignUpBinding
 
 
 class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding::inflate) {
-    private lateinit var database: DatabaseReference
-    private lateinit var firebaseAuth: FirebaseAuth
+   private val auth by lazy { FirebaseAuth.getInstance() }
+   private val database by lazy { FirebaseFirestore.getInstance() }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
         binding.signupbutton2.setOnClickListener {
+            if (isValid()){
+                auth.createUserWithEmailAndPassword(binding.signupMailEditText.text.toString(),
+                binding.signupPasswordEditText.text.toString()).addOnSuccessListener {
+                    addUserToCollection()
+                    findNavController().navigate(R.id.action_signUpPage_to_loginPage)
+                }.addOnFailureListener { Toast.makeText(requireContext(),"SignUp Failed",Toast.LENGTH_LONG).show() }
 
-            val userName = binding.signupNameEditText.text.toString()
-            val userSurname = binding.signupSurnameEditText.text.toString()
-            val userMail = binding.signupMailEditText.text.toString()
-            val userPassword = binding.signupPasswordEditText.text.toString()
-            val confirmPass = binding.singupConfirmPassEditText.text.toString()
-
-            if (userMail.isNotEmpty() && userPassword.isNotEmpty() && confirmPass.isNotEmpty()) {
-                if (userPassword == confirmPass){
-
-                    database = FirebaseDatabase.getInstance().getReference("Users")
-                    val User = User(userName, userSurname, userMail, userPassword , confirmPass)
-                    database.child(userName).setValue(User).addOnSuccessListener {
-                        binding.signupNameEditText.text.clear()
-                        binding.signupSurnameEditText.text.clear()
-                        binding.signupMailEditText.text.clear()
-                        binding.signupPasswordEditText.text.clear()
-                        binding.singupConfirmPassEditText.text.clear()
-
-                        findNavController().navigate(R.id.action_signUpPage_to_loginPage)
-
-
-
-
-                    }
-
-
-
-
-                }else{
-                    Toast.makeText(this.context,"Password must matched",Toast.LENGTH_SHORT)
-                        .show()
-                }
-            }else{
-                Toast.makeText(this.context, "Please fill the empty fields", Toast.LENGTH_SHORT)
-                    .show()
             }
-
-
-
-
-
-
         }
-        binding.signupLoginButton.setOnClickListener {
-            findNavController().navigate(R.id.action_signUpPage_to_loginPage)
+    }
+    private fun addUserToCollection(){
+        database.collection("MyUser").document(auth.currentUser!!.uid)
+            .set(User(
+                userName =binding.signupNameEditText.text.toString(),
+                userSurname = binding.signupSurnameEditText.text.toString(),
+                userPassword = binding.signupPasswordEditText.text.toString(),
+                userMail = binding.signupMailEditText.text.toString(),
+                favouriteList = mutableListOf(UserList("100","ilan 1")
+                    ,UserList("200","ilan 2")),
+                favouriteSellersList = mutableListOf(SellersList("emre")),
+                itemList = mutableListOf(UserList("300","ilan 3"))
+
+            ))
+    }
+    private fun isValidPassword():Boolean{
+        return binding.signupPasswordEditText.text.toString() == binding.singupConfirmPassEditText.text.toString()
+    }
+    private fun isValid():Boolean{
+        var valid=false
+         if(isValidPassword()){
+            if(binding.signupPasswordEditText.text.isNotEmpty() && binding.signupMailEditText.text.isNotEmpty() &&
+                binding.signupNameEditText.text.isNotEmpty() && binding.signupSurnameEditText.text.isNotEmpty() &&
+                    binding.singupConfirmPassEditText.text.isNotEmpty()){
+
+                valid=true
+            }
         }
-
-
+        return  valid
     }
 
     override fun isNavigationBarVisible() = false
 }
+
