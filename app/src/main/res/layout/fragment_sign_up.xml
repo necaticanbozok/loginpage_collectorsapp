@@ -6,9 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/signuppage_bg"
-    tools:context=".ui.login.SignUpFragment">
+    tools:context=".ui.login.SignUpFragment"
+    app:passwordToggleEnabled="true">
 
     <!-- TODO: Update blank fragment layout -->
+
+
     <EditText
         android:id="@+id/signup_name_editText"
         style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
@@ -23,6 +26,7 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/signup_surname_editText"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TouchTargetSizeCheck" />
@@ -56,18 +60,18 @@
 
 
         android:layout_marginEnd="73dp"
-        android:layout_marginBottom="2dp"
+        android:layout_marginBottom="1dp"
         android:background="#DBF7E9CB"
         android:hint="Password"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/singup_mail_editText"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/singup_confirmPass_editText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signup_surname_editText"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/singup_mail_editText"
+        android:id="@+id/singup_confirmPass_editText"
         style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -77,10 +81,11 @@
         android:layout_marginEnd="73dp"
 
         android:background="#DBF7E9CB"
-        android:hint="Mail Address"
-        android:inputType="textPersonName"
+        android:hint="Confirm Password"
+        android:inputType="textPersonName|textPassword"
         app:layout_constraintBottom_toTopOf="@+id/signupbutton2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signup_password_editText"
         tools:ignore="TouchTargetSizeCheck" />
@@ -112,6 +117,25 @@
         app:layout_constraintBottom_toTopOf="@+id/signup_login_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/singup_mail_editText" />
+        app:layout_constraintTop_toBottomOf="@+id/singup_confirmPass_editText" />
+
+    <EditText
+        android:id="@+id/signup_Mail_editText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="256dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginBottom="1dp"
+        android:background="#DBF7E9CB"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/signup_name_editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

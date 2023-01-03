@@ -40,9 +40,6 @@
         <action
             android:id="@+id/action_signUpPage_to_loginPage"
             app:destination="@id/loginPage" />
-        <action
-            android:id="@+id/action_signUpPage_to_mainPageFragment"
-            app:destination="@id/mainPageFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
