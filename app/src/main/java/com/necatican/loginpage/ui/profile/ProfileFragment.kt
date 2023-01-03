@@ -1,6 +1,7 @@
 package com.necatican.loginpage.ui.profile
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -27,22 +28,9 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //adding rv fragments to fragmentlist
-        tabLayoutfragmentList.add(ListedItemsRVFragment())
-        tabLayoutfragmentList.add(FavouriteItemsRVFragment())
-        tabLayoutfragmentList.add(FavouriteSellersRVFragment())
 
-        //creating adapter object from viewpagerdapter in order to connect
-        val adapter = ViewPagerAdapter(childFragmentManager, lifecycle)
-        binding.viewpager2.adapter = adapter
 
-        //adding title
-        tabLayoutFragmentTitleTagList.add("Listed Items")
-        tabLayoutFragmentTitleTagList.add("Favourite Items")
-        tabLayoutFragmentTitleTagList.add("Favourite Sellers")
 
-        TabLayoutMediator(binding.tablayout, binding.viewpager2) { tab, position ->
-            tab.setText(tabLayoutFragmentTitleTagList[position])
-        }.attach()
 
         //Action to navigate edit profile
         binding.editProfileButton.setOnClickListener {
@@ -52,7 +40,22 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
 
         //observing username
         viewModel.user.observe(viewLifecycleOwner) {
-            binding.userName.text = it?.adName
+            //creating adapter object from viewpagerdapter in order to connect
+            val adapter = ViewPagerAdapter(childFragmentManager, lifecycle)
+            binding.viewpager2.adapter = adapter
+
+            //adding title
+            tabLayoutFragmentTitleTagList.add("Listed Items")
+            tabLayoutFragmentTitleTagList.add("Favourite Items")
+            tabLayoutFragmentTitleTagList.add("Favourite Sellers")
+
+            TabLayoutMediator(binding.tablayout, binding.viewpager2) { tab, position ->
+                tab.setText(tabLayoutFragmentTitleTagList[position])
+            }.attach()
+            binding.userName.text = it?.userName
+            adapter.setUserList(it?.itemList ?: emptyList() )
+            adapter.setFavList(it?.favouriteList ?: emptyList() )
+            adapter.setSellerList(it?.favouriteSellersList ?: emptyList() )
         }
     }
 

@@ -11,24 +11,18 @@ import com.necatican.loginpage.R
 import com.necatican.loginpage.adapter.ListedItemsRVAdapter
 import com.necatican.loginpage.base.BaseFragment
 import com.necatican.loginpage.data.model.Items
+import com.necatican.loginpage.data.model.UserList
 import com.necatican.loginpage.databinding.FragmentListedItemsRvBinding
 
 
-class ListedItemsRVFragment : BaseFragment<FragmentListedItemsRvBinding>(FragmentListedItemsRvBinding::inflate){
+class ListedItemsRVFragment(val items: List<UserList>) : BaseFragment<FragmentListedItemsRvBinding>(FragmentListedItemsRvBinding::inflate){
     private val adapter by lazy { ListedItemsRVAdapter() }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter.setData(loadData())
+        adapter.setData(items)
         binding.listItemRecyclerView.adapter = adapter
     }
 
-    //loading data
-    private fun loadData() : List<Items>{
-       val myList = mutableListOf<Items>()
-        for (i in 1..10) {
-            myList.add(Items(adImage = R.drawable.listed_item1, adName = "$i.Emre", adPrice = "$i"))
-        }
-        return  myList
-    }
+
 }
