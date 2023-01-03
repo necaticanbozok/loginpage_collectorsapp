@@ -60,7 +60,7 @@
         tools:layout="@layout/fragment_chatting" />
     <fragment
         android:id="@+id/editProfileButtonFragment"
-        android:name="com.necatican.loginpage.ui.profile.EditProfileButtonFragment"
+        android:name="com.necatican.loginpage.ui.profile.edit_profile.EditProfileButtonFragment"
         android:label="fragment_edit_profile_button"
         tools:layout="@layout/fragment_edit_profile_button" >
         <action

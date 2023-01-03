@@ -9,6 +9,7 @@ import com.necatican.loginpage.databinding.FragmentSignUpBinding
 
 
 class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding::inflate) {
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.signupLoginButton.setOnClickListener {
@@ -20,6 +21,8 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
     }
 
     override fun isNavigationBarVisible() = false
-
-
 }
+
+
+
+

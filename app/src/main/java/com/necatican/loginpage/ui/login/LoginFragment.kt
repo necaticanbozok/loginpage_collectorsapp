@@ -6,28 +6,27 @@ import androidx.navigation.fragment.findNavController
 import com.necatican.loginpage.R
 import com.necatican.loginpage.base.BaseFragment
 import com.necatican.loginpage.databinding.FragmentLoginBinding
-import kotlinx.android.synthetic.main.activity_main.*
 
 
-class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate){
+class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         isNavigationBarVisible()
 
-        binding.loginbutton2.setOnClickListener(){
-            findNavController().navigate(R.id.action_loginPage_to_mainPageFragment)
-        }
-        binding.loginSignupButton.setOnClickListener(){
+        binding.loginSignupButton.setOnClickListener {
             findNavController().navigate(R.id.action_loginPage_to_signUpPage)
+        }
+        binding.loginbutton2.setOnClickListener() {
+            //signInUser(binding.loginMailEditText.text.toString(),binding.loginPasswordEditText.text.toString())
+            findNavController().navigate(R.id.action_loginPage_to_mainPageFragment)
         }
 
 
     }
 
     override fun isNavigationBarVisible() = false
-
-
 }
-
 

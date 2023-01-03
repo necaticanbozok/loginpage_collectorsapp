@@ -47,6 +47,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:20.0.4'
     implementation 'com.google.firebase:firebase-auth-ktx:21.1.0'
     implementation 'com.google.firebase:firebase-firestore-ktx:24.4.1'
+    implementation 'com.google.android.gms:play-services-cast-framework:21.0.1'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
@@ -54,11 +55,13 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.0'
     implementation platform('com.google.firebase:firebase-bom:31.1.1')
     implementation("com.google.android.material:material:1.1.0-beta01")
+   // implementation 'com.github.dhaval2404:imagepicker:2.1'
+
 
     /*ViewModel :
     implementation("androidx.lifecycle:lifecycle-viewmodel:2.5.1")
     implementation("androidx.activity:activity-ktx:1.6.1")
-    */
+*/
 
     /*LiveData:
     implementation("androidx.lifecycle:lifecycle-livedata:2.5.1")

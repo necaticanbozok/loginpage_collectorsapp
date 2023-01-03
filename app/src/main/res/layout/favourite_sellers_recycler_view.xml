@@ -22,45 +22,39 @@
 
             <ImageView
                 android:id="@+id/AdImage"
-                android:layout_width="263dp"
-                android:layout_height="125dp"
+                android:layout_width="209dp"
+                android:layout_height="113dp"
+                android:layout_marginStart="2dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="116dp"
-                android:layout_marginBottom="6dp"
-                app:layout_constraintBottom_toTopOf="@+id/AdNameText"
+                android:layout_marginEnd="200dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.5"
                 app:srcCompat="@drawable/ic_launcher_background" />
 
             <TextView
-                android:id="@+id/AdNameText"
-                android:layout_width="407dp"
+                android:id="@+id/profile_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="53dp"
+                android:layout_marginEnd="120dp"
+                android:text="TextView"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/AdImage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/see_profile_button"
+                android:layout_width="408dp"
                 android:layout_height="51dp"
-                android:background="@color/color_cyan"
-                android:text="Ad Name"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textSize="20sp"
-                android:textStyle="bold"
+                android:text="See profile"
+                app:backgroundTint="@color/color_cyan"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/AdImage" />
-
-            <Button
-                android:id="@+id/AdPrice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="103dp"
-                android:layout_marginEnd="16dp"
-                android:text="Ad Price"
-                app:backgroundTint="@color/color_top"
-                app:cornerRadius="20dp"
-                app:layout_constraintBottom_toTopOf="@+id/AdNameText"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/AdImage"
-                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
